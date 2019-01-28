@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="error_dialog_title">App requires Location Permisson</string>
+    <string name="exit">Exit</string>
+    <string name="grant">Grant</string>
+    <string name="error_message">Something went wrong at our end</string>
+    <string name="retry">RETRY</string>
 </resources>

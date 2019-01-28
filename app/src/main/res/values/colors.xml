@@ -7,4 +7,5 @@
     <color name="background_error">#E85959</color>
     <color name="white">#FFFFFF</color>
     <color name="light_gray">#4A4A4A</color>
+    <color name="text_light_black">#2A2A2A</color>
 </resources>

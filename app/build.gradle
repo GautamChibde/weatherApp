@@ -101,3 +101,9 @@ dependencies {
     androidTestImplementation deps.mockito.core
     androidTestImplementation deps.mockito.android
 }
+
+project.tasks.whenTaskAdded {
+    if (it.name == "testReleaseUnitTest") {
+        it.enabled = false
+    }
+}

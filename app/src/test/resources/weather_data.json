@@ -1,0 +1,75 @@
+{
+  "location": {
+    "name": "Bangalore",
+    "region": "Karnataka",
+    "country": "India",
+    "lat": 12.98,
+    "lon": 77.58,
+    "tz_id": "Asia/Kolkata",
+    "localtime_epoch": 1548685712,
+    "localtime": "2019-01-28 19:58"
+  },
+  "current": {
+    "last_updated_epoch": 1548684026,
+    "last_updated": "2019-01-28 19:30",
+    "temp_c": 21.0,
+    "temp_f": 69.8,
+    "is_day": 0,
+    "condition": {
+      "text": "Partly cloudy",
+      "icon": "//cdn.apixu.com/weather/64x64/night/116.png",
+      "code": 1003
+    },
+    "wind_mph": 11.9,
+    "wind_kph": 19.1,
+    "wind_degree": 20,
+    "wind_dir": "NNE",
+    "pressure_mb": 1018.0,
+    "pressure_in": 30.5,
+    "precip_mm": 0.4,
+    "precip_in": 0.02,
+    "humidity": 100,
+    "cloud": 50,
+    "feelslike_c": 21.0,
+    "feelslike_f": 69.8,
+    "vis_km": 6.0,
+    "vis_miles": 3.0,
+    "uv": 0.0
+  },
+  "forecast": {
+    "forecastday": [
+      {
+        "date": "2019-01-28",
+        "date_epoch": 1548633600,
+        "day": {
+          "maxtemp_c": 27.6,
+          "maxtemp_f": 81.7,
+          "mintemp_c": 18.5,
+          "mintemp_f": 65.3,
+          "avgtemp_c": 23.0,
+          "avgtemp_f": 73.4,
+          "maxwind_mph": 12.1,
+          "maxwind_kph": 19.4,
+          "totalprecip_mm": 8.5,
+          "totalprecip_in": 0.33,
+          "avgvis_km": 15.2,
+          "avgvis_miles": 9.0,
+          "avghumidity": 69.0,
+          "condition": {
+            "text": "Light rain shower",
+            "icon": "//cdn.apixu.com/weather/64x64/day/353.png",
+            "code": 1240
+          },
+          "uv": 8.2
+        },
+        "astro": {
+          "sunrise": "06:46 AM",
+          "sunset": "06:19 PM",
+          "moonrise": "12:24 AM",
+          "moonset": "12:28 PM"
+        }
+      }
+    ]
+  }
+}
+

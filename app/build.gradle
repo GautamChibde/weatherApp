@@ -40,9 +40,7 @@ dependencies {
     implementation deps.navigation.fragment_ktx
     implementation deps.support.v4
 
-    implementation deps.room.runtime
     implementation deps.constraint_layout
-    kapt deps.room.compiler
 
     implementation deps.lifecycle.runtime
     implementation deps.lifecycle.extensions
@@ -64,9 +62,10 @@ dependencies {
 
     implementation deps.external.dialogs
 
+    implementation deps.play_services.location
+
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler
-    kapt deps.room.compiler
     kapt deps.lifecycle.compiler
 
     testImplementation deps.junit

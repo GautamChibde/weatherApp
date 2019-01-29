@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.chibde.weatherapp.repository.WeatherDataRepository
 import com.chibde.weatherapp.repository.WeatherDataResults
+import com.chibde.weatherapp.ui.WeatherViewModel
 import com.chibde.weatherapp.util.TestUtil
 import com.chibde.weatherapp.util.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -20,17 +21,17 @@ import org.junit.runners.JUnit4
 import org.mockito.Mockito
 
 @RunWith(JUnit4::class)
-class SplashViewModelTest {
+class WeatherViewModelTest {
     @Rule
     @JvmField
     val instantExecutorRule = InstantTaskExecutorRule()
 
     private val repository = Mockito.mock(WeatherDataRepository::class.java)
-    private lateinit var viewModel: SplashViewModel
+    private lateinit var viewModel: WeatherViewModel
 
     @Before
     fun init() {
-        viewModel = SplashViewModel(repository)
+        viewModel = WeatherViewModel(repository)
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.chibde.weatherapp.ui.main
+package com.chibde.weatherapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

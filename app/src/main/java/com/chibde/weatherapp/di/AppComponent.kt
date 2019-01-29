@@ -1,11 +1,9 @@
 package com.chibde.weatherapp.di
 
 import android.app.Application
-import com.chibde.weatherapp.ui.main.MainActivity
 import com.chibde.weatherapp.WeatherApp
 import com.chibde.weatherapp.di.module.ActivityModule
 import com.chibde.weatherapp.di.module.AppModule
-import com.chibde.weatherapp.ui.splash.SplashActivity
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

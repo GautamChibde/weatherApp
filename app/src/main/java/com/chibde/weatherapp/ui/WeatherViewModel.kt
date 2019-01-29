@@ -1,4 +1,4 @@
-package com.chibde.weatherapp.ui.splash
+package com.chibde.weatherapp.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SplashViewModel @Inject constructor(
+class WeatherViewModel @Inject constructor(
     private val repository: WeatherDataRepository
 ) : ViewModel() {
 

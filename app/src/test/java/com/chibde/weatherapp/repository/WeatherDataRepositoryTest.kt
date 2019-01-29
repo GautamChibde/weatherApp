@@ -1,13 +1,16 @@
 package com.chibde.weatherapp.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.Observer
 import com.chibde.weatherapp.api.WeatherApiService
-import com.chibde.weatherapp.api.exceptions.NoConnectivityException
 import com.chibde.weatherapp.util.TestUtil
 import com.chibde.weatherapp.utils.LocationManager
-import com.nhaarman.mockitokotlin2.*
-import kotlinx.coroutines.*
+import com.nhaarman.mockitokotlin2.doAnswer
+import com.nhaarman.mockitokotlin2.whenever
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
+import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -45,14 +48,14 @@ class WeatherDataRepositoryTest {
                 weatherDataResponse
             }
         }
-        val observer = mock<Observer<WeatherDataResults>>()
-        repository.weatherDataResults.observeForever(observer)
-        async { repository.getWeatherData() }.await()
-        verify(observer).onChanged(
-            WeatherDataResults(
-                success = true,
-                error = "",
-                data = weatherDataResponse
+        val weatherDataResults = async { repository.getWeatherData() }.await()
+        assertThat(
+            weatherDataResults, `is`(
+                WeatherDataResults(
+                    success = true,
+                    error = "",
+                    data = weatherDataResponse
+                )
             )
         )
     }

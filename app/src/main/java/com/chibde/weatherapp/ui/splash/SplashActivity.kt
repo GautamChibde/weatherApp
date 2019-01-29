@@ -94,7 +94,7 @@ class SplashActivity : AppCompatActivity() {
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.putParcel("data", weatherForecast)
         startActivity(intent)
-        overridePendingTransition(0, 0);
+        overridePendingTransition(0, 0)
     }
 
     private fun requestPermissionsForApp() {

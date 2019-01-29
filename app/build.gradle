@@ -18,7 +18,7 @@ android {
         targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.chibde.weatherapp.AndroidTestRunner"
+        testInstrumentationRunner "com.chibde.weatherapp.utils.AndroidTestRunner"
     }
     buildTypes {
         debug {

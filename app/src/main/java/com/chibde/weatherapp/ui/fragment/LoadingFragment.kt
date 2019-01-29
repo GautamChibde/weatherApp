@@ -1,6 +1,5 @@
 package com.chibde.weatherapp.ui.fragment
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +12,13 @@ import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.chibde.weatherapp.R
 import com.chibde.weatherapp.di.Injectable
-import com.chibde.weatherapp.ui.MainActivity
+import com.chibde.weatherapp.testing.OpenForTesting
+import com.chibde.weatherapp.ui.FragmentNavigator
 import com.chibde.weatherapp.ui.WeatherViewModel
 import kotlinx.android.synthetic.main.fragment_loading.*
 import javax.inject.Inject
 
-
+@OpenForTesting
 class LoadingFragment : Fragment(), Injectable {
 
     @Inject
@@ -41,7 +41,7 @@ class LoadingFragment : Fragment(), Injectable {
         viewModel.dataResults.observe(this, Observer { weatherDataResults ->
             if (weatherDataResults.success) {
                 weatherDataResults.data?.let { weatherForecast ->
-                    (activity as MainActivity).weatherDataFragment(weatherForecast)
+                    (activity as FragmentNavigator).loadWeatherFragment(weatherForecast)
                 } ?: run {
                     showError()
                 }

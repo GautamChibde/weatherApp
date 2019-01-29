@@ -16,7 +16,11 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
+interface FragmentNavigator {
+    fun loadWeatherFragment(weatherForecast: WeatherForecast)
+}
+
+class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, FragmentNavigator {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
@@ -79,7 +83,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             .commit()
     }
 
-    fun weatherDataFragment(weatherForecast: WeatherForecast) {
+    override fun loadWeatherFragment(weatherForecast: WeatherForecast) {
         val fragment = WeatherFragment()
         val bundle = Bundle()
         bundle.putParcelable(WeatherFragment.DATA, weatherForecast)

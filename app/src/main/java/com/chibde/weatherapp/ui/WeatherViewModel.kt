@@ -5,11 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.chibde.weatherapp.repository.WeatherDataRepository
 import com.chibde.weatherapp.repository.WeatherDataResults
+import com.chibde.weatherapp.testing.OpenForTesting
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@OpenForTesting
 class WeatherViewModel @Inject constructor(
     private val repository: WeatherDataRepository
 ) : ViewModel() {

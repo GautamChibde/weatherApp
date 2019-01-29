@@ -5,4 +5,6 @@
     <string name="grant">Grant</string>
     <string name="error_message">Something went wrong at our end</string>
     <string name="retry">RETRY</string>
+    <string name="current_temperature">"%s\u00B0"</string>
+    <string name="temperature_celsius">%s C</string>
 </resources>

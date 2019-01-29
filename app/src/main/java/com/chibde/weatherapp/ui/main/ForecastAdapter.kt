@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.chibde.weatherapp.R
 import com.chibde.weatherapp.model.ForecastDay
+import com.chibde.weatherapp.utils.getDayString
 import kotlinx.android.synthetic.main.item_forecast.view.*
 
 class ForecastAdapter(
-    private val items: ArrayList<ForecastDay>
+    private val items: List<ForecastDay>
 ) : RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -22,8 +23,11 @@ class ForecastAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.itemView) {
-            item_forecast_tv_day.text = items[position].date ?: "N/A"
-            item_forecast_tv_temp.text = items[position].day?.avgtemp.toString()
+            item_forecast_tv_day.text = items[position].date?.getDayString() ?: "N/A"
+            item_forecast_tv_temp.text = String.format(
+                this.context.getString(R.string.temperature_celsius),
+                items[position].day?.avgtemp?.toString() ?: "N/A"
+            )
         }
     }
 

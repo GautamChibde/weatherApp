@@ -14,8 +14,10 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.bumptech.glide.Glide
 import com.chibde.weatherapp.R
 import com.chibde.weatherapp.WeatherApp
+import com.chibde.weatherapp.model.WeatherForecast
 import com.chibde.weatherapp.ui.main.MainActivity
 import com.chibde.weatherapp.utils.AppViewModelFactory
+import com.chibde.weatherapp.utils.putParcel
 import kotlinx.android.synthetic.main.activity_splash.*
 import javax.inject.Inject
 
@@ -43,7 +45,7 @@ class SplashActivity : AppCompatActivity() {
         viewModel.dataResults.observe(this, Observer {
             if (it.success) {
                 it.data?.let {
-                    startMainActivity()
+                    startMainActivity(it)
                 } ?: run {
                     showError()
                 }
@@ -85,9 +87,14 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun startMainActivity() {
+    private fun startMainActivity(weatherForecast: WeatherForecast) {
         val intent = Intent(this, MainActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.putParcel("data", weatherForecast)
         startActivity(intent)
+        overridePendingTransition(0, 0);
     }
 
     private fun requestPermissionsForApp() {

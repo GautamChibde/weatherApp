@@ -1,5 +1,6 @@
 package com.chibde.weatherapp.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.chibde.weatherapp.api.WeatherApiService
@@ -33,7 +34,7 @@ class WeatherDataRepository @Inject constructor(
                     days = days,
                     location = location
                 ).await()
-
+                Log.i("data", "weather data = $weatherData")
                 _weatherDataResults.postValue(
                     WeatherDataResults(
                         success = true,

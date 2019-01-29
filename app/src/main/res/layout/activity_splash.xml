@@ -23,6 +23,7 @@
             android:text="@string/error_message"
             android:layout_width="0dp"
             android:textSize="54sp"
+            android:gravity="center"
             android:visibility="invisible"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
@@ -37,7 +38,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            tools:text="@string/error_message"/>
+            tools:text="@string/error_message"
+            android:fontFamily="@font/roboto_thin"/>
 
     <Button
             android:text="@string/retry"
@@ -54,5 +56,6 @@
             android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            android:fontFamily="@font/roboto_thin"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

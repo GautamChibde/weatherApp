@@ -20,7 +20,9 @@
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Monday"
-            android:textSize="16sp"/>
+            android:lineSpacingExtra="19sp"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"/>
 
     <TextView
             android:layout_width="56dp"
@@ -36,5 +38,8 @@
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="24 C"
-            android:textSize="16sp"/>
+            android:lineSpacingExtra="19sp"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
+            android:typeface="normal"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.chibde.weatherapp.di
 import android.app.Application
 import com.chibde.weatherapp.ui.main.MainActivity
 import com.chibde.weatherapp.WeatherApp
+import com.chibde.weatherapp.di.module.ActivityModule
 import com.chibde.weatherapp.di.module.AppModule
 import com.chibde.weatherapp.ui.splash.SplashActivity
 import dagger.BindsInstance
@@ -14,7 +15,8 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        AppModule::class
+        AppModule::class,
+        ActivityModule::class
     ]
 )
 interface AppComponent {
@@ -27,8 +29,4 @@ interface AppComponent {
     }
 
     fun inject(app: WeatherApp)
-
-    fun inject(splashActivity: SplashActivity)
-
-    fun inject(mainActivity: MainActivity)
 }

@@ -18,7 +18,7 @@ android {
         targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.chibde.weatherapp.AndroidTestRunner"
     }
     buildTypes {
         debug {
@@ -96,6 +96,7 @@ dependencies {
 
     androidTestImplementation deps.espresso.core
     androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intents
 
     androidTestImplementation deps.arch_core.testing
     androidTestImplementation deps.mockito.core

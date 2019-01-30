@@ -85,9 +85,9 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector, FragmentNa
 
     override fun loadWeatherFragment(weatherForecast: WeatherForecast) {
         val fragment = WeatherFragment()
-        val bundle = Bundle()
-        bundle.putParcelable(WeatherFragment.DATA, weatherForecast)
-        fragment.arguments = bundle
+        fragment.arguments = Bundle().apply {
+            putParcelable(WeatherFragment.DATA, weatherForecast)
+        }
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()

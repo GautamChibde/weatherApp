@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chibde.weatherapp.R
 import com.chibde.weatherapp.model.WeatherForecast
+import com.chibde.weatherapp.testing.OpenForTesting
 import com.chibde.weatherapp.ui.adapter.ForecastAdapter
 import kotlinx.android.synthetic.main.fragment_weather.*
 
+@OpenForTesting
 class WeatherFragment : Fragment() {
 
     override fun onCreateView(
